@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+header {
+    margin: 50px 0px 0px 20px;
+}
+
+header span {
+    font-size: 1.5rem;
+}
+
+#label-icon {
+    width: 40px;
+    height: 50px;
+    padding-right: 5px;
+}
+
+.container {
+    width: 90vw;
+    height: 500px;
+    border-bottom: 20px solid green;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, #87CEEB, #00BFFF);
+}
+
+.game-board {
+    display: flex;
+    justify-content: space-between;
+}
+
+.character {
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.trees {
+    display: flex;
+    justify-content: space-between;
+    flex: 2;
+}
+
+.tree {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.label-tree {
+    width: 10px;
+    height: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 25px;
+}
+
+.beach-container {
+    width: 90vw;
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.waves {
+    position: relative;
+    width: 100%;
+    flex-grow: 1;
+    overflow: hidden;
+    background: #00BFFF;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0.7;
+    border-radius: 43%;
+    animation: wave-animation 4s infinite linear;
+}
+
+#wave1 {
+    animation-delay: 0s;
+}
+
+#wave2 {
+    animation-delay: 1s;
+    opacity: 0.5;
+}
+
+#wave3 {
+    animation-delay: 2s;
+    opacity: 0.3;
+}
+
+.sand {
+    width: 100%;
+    height: 100px;
+    background: #F4A460;
+    display: flex;
+    justify-content: space-around;
+    align-items:self-end;
+}
+
+.lighthouse {
+    z-index: 1;
+    height: 150px;
+}
+
+.bottle {
+    height: 70px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s;
+    bottom: 10px;
+}
+
+.bottle:hover {
+    transform: scale(1.2);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+@keyframes wave-animation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.music-container {
+    position: relative;
+    width: 300px; /* Ajuste a largura conforme necessário */
+    height: 50px; /* Altura suficiente para os controles de áudio */
+    overflow: hidden;
+}
+
+.music-container iframe {
+    position: absolute;
+    top: -1000px; /* Move o vídeo para fora da tela */
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
